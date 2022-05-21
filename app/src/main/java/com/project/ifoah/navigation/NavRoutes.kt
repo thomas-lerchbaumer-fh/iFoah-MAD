@@ -1,5 +1,5 @@
 package com.project.ifoah.navigation
 
 enum class SCREENS{
-    Home,Login,Register
+    Home,Login,Register,Splash,SkiStatistics
 }

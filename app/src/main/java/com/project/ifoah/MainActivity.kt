@@ -10,14 +10,15 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.core.view.WindowCompat
 import com.project.ifoah.navigation.Navigation
 import com.project.ifoah.ui.theme.IFoahTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
 
+        setContent {
          IFoahTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(

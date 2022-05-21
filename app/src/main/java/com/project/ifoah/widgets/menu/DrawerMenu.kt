@@ -1,6 +1,7 @@
 package com.project.ifoah.widgets.menu
 
 import android.graphics.drawable.Icon
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -21,6 +22,7 @@ import com.project.ifoah.navigation.SCREENS
 import com.project.ifoah.viewmodels.auth.AuthViewModel
 import kotlinx.coroutines.launch
 
+@OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun DrawerMenu(
     navController: NavController,
@@ -44,19 +46,24 @@ fun DrawerMenu(
                     }) {
                         Icon(imageVector = Icons.Default.Menu, contentDescription = "menu")
                     }
-                    IconButton(onClick = {
-                        navController.popBackStack()
-                    }) {
-                        Icon(imageVector = Icons.Default.ArrowBack, contentDescription = "back")
+
+                    Log.d("backqueuentires",navController.previousBackStackEntry.toString())
+                    if(navController.previousBackStackEntry != null){
+                        IconButton(onClick = {
+                            navController.popBackStack()
+                        }) {
+                            Icon(imageVector = Icons.Default.ArrowBack, contentDescription = "back")
+                        }
                     }
+
                     Text(text = title, style = MaterialTheme.typography.h6)
                 }
             }
         },
         drawerBackgroundColor = MaterialTheme.colors.background,
-        // scrimColor = Color.Red,  // Color for the fade background when you open/close the drawer
+        //scrimColor = Color.Red,  // Color for the fade background when you open/close the drawer
         drawerContent = {
-            /* Add code later */
+
             menuHeader(userName = userName)
             Divider(
                 modifier = Modifier.padding(top= 20.dp, bottom = 20.dp)
@@ -94,42 +101,38 @@ fun menuHeader(userName: String?) {
 }
 
 
+@ExperimentalMaterialApi
 @Composable
 fun menuItems(authViewModel: AuthViewModel, navController: NavController) {
 
-    Column() {
-        Row() {
-            Icon(
-                imageVector = Icons.Default.Home, contentDescription = "account",
-                modifier = Modifier.size(80.dp),
-                tint = MaterialTheme.colors.primary
-            )
-
-            Text(text = "Home", style = MaterialTheme.typography.body2)
-        }
-    }
-
-    Column(
-        modifier = Modifier.clickable(
-            onClick = {
-                navController.navigate(route = "${SCREENS.Login}")
-                authViewModel.signOut()
-
-
+    Column(){
+        ListItem(
+            text = { Text(text = "Home") },
+            icon = {
+                Icon(
+                    imageVector = Icons.Default.Home, contentDescription = "account",
+                    tint = MaterialTheme.colors.primary,
+                    modifier = Modifier.size(40.dp)
+                )
             }
         )
-    ) {
-        Row(
-        ) {
-            Icon(
-                imageVector = Icons.Default.Logout, contentDescription = "account",
-                modifier = Modifier.size(80.dp),
-                tint = MaterialTheme.colors.primary
+        ListItem(
+            text = { Text(text = "Logout") },
+            icon = {
+                Icon(
+                    imageVector = Icons.Default.Logout, contentDescription = "account",
+                    tint = MaterialTheme.colors.primary,
+                    modifier = Modifier.size(40.dp)
+                )
+            },
+            modifier = Modifier.clickable(
+                onClick = {
+                    navController.navigate(route = "${SCREENS.Login}")
+                    authViewModel.signOut()
+                }
             )
-            Text(text = "Logout", style = MaterialTheme.typography.body2)
-        }
+        )
     }
-
 
 
 

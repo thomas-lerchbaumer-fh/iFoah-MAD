@@ -1,19 +1,21 @@
 package com.project.ifoah.viewmodels.auth
 
+import android.app.PendingIntent.getActivity
+import android.content.Context.ACCESSIBILITY_SERVICE
 import android.util.Log
-import android.util.Patterns
+
 import androidx.compose.runtime.mutableStateOf
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
+
 import androidx.lifecycle.ViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.auth.User
+
 import com.google.firebase.firestore.ktx.toObject
+
 import com.project.ifoah.data.Event
 import com.project.ifoah.data.UserData
 import java.lang.Exception
-import javax.inject.Inject
+
 
 const val USERS = "UserMeta"
 
@@ -163,5 +165,6 @@ class AuthViewModel constructor(
         val errorMsg =  exception?.message ?: ""
         val message = if (customMessage.isEmpty()) { errorMsg } else { "$customMessage: $errorMsg" }
         popNotification.value = Event(message)
+
     }
 }
