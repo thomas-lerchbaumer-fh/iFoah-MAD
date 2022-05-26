@@ -51,6 +51,7 @@ dependencies {
     var coil_version = "2.0.0-rc02"
     var lifecycle_version = "2.5.0-alpha05"
     var appcompat_version = "1.4.1"
+    var chart_version ="0.1.2"
 
     implementation("androidx.appcompat:appcompat:$appcompat_version")
     // For loading and tinting drawables on older versions of the platform
@@ -78,6 +79,8 @@ dependencies {
     //viewmodel compose
     implementation "androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version"
 
+    //charts
+    implementation("io.github.bytebeats:compose-charts:$chart_version")
 
     //hilt stuff
     implementation group: 'javax.inject', name: 'javax.inject', version: '1'

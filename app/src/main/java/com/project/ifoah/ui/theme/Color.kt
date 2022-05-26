@@ -13,3 +13,5 @@ val Dark800 = Color(0xFF424242)
 var Orange800 = Color(0xFFee6002)
 
 var Red700 = Color(0xFFD32F2F)
+
+var white = Color(0xFFFFFF)

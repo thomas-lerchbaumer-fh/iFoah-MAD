@@ -15,10 +15,9 @@ private val DarkColorPalette = darkColors(
 
 private val LightColorPalette = lightColors(
     primary = Orange800,
-    primaryVariant = Purple700,
+    primaryVariant = Dark800,
     secondary = Teal200,
-    background = DarkGrey,
-
+    background = DarkGrey
     /* Other default colors to override
     background = Color.White,
     surface = Color.White,
@@ -33,11 +32,9 @@ private val LightColorPalette = lightColors(
 
 @Composable
 fun IFoahTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable () -> Unit) {
-    val colors = if (darkTheme) {
-        DarkColorPalette
-    } else {
-        LightColorPalette
-    }
+    val colors = DarkColorPalette
+
+
 
     MaterialTheme(
         colors = colors,

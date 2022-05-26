@@ -114,7 +114,48 @@ fun menuItems(authViewModel: AuthViewModel, navController: NavController) {
                     tint = MaterialTheme.colors.primary,
                     modifier = Modifier.size(40.dp)
                 )
+            },
+            modifier = Modifier.clickable{
+                if(navController.previousBackStackEntry != null) {
+                    navController.popBackStack()
+                }
+
+                navController.navigate(route = "${SCREENS.Home}")
+                if(navController.previousBackStackEntry != null) {
+                    navController.popBackStack()
+                }
+
             }
+        )
+        ListItem(
+            text = { Text(text = "Ski Sessions") },
+            icon = {
+                Icon(
+                    imageVector = Icons.Default.DownhillSkiing, contentDescription = "account",
+                    tint = MaterialTheme.colors.primary,
+                    modifier = Modifier.size(40.dp)
+                )
+            },
+            modifier = Modifier.clickable{
+                navController.navigate(route = "${SCREENS.SkiStatistics}")
+
+            }
+
+        )
+        ListItem(
+            text = { Text(text = "Ski Sessions") },
+            icon = {
+                Icon(
+                    imageVector = Icons.Default.Analytics, contentDescription = "account",
+                    tint = MaterialTheme.colors.primary,
+                    modifier = Modifier.size(40.dp)
+                )
+            },
+            modifier = Modifier.clickable{
+                navController.navigate(route = "${SCREENS.ProgressScreen}")
+
+            }
+
         )
         ListItem(
             text = { Text(text = "Logout") },

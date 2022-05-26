@@ -13,6 +13,7 @@ import androidx.navigation.NavController
 import com.project.ifoah.viewmodels.auth.AuthViewModel
 import com.project.ifoah.viewmodels.skidata.SkiDataViewModel
 import com.project.ifoah.widgets.DeviceStatus
+import com.project.ifoah.widgets.home.ProgressWidget
 import com.project.ifoah.widgets.home.SkiSessionWidget
 import com.project.ifoah.widgets.menu.DrawerMenu
 
@@ -20,11 +21,13 @@ import com.project.ifoah.widgets.menu.DrawerMenu
 fun HomeScreen(navController: NavController,authViewModel: AuthViewModel, skiDataViewModel : SkiDataViewModel){
     val name = authViewModel.userData.value
 
-    Log.d("stuff",skiDataViewModel.skiData.toString())
+
    DrawerMenu(navController = navController, authViewModel = authViewModel, title = "Home"){
        Column(){
            DeviceStatus()
+
            SkiSessionWidget(navController = navController, authViewModel = authViewModel)
+           ProgressWidget(navController = navController, authViewModel = authViewModel)
        }
 
    }

@@ -1,40 +1,40 @@
 package com.project.ifoah.widgets.home
 
-import androidx.annotation.DrawableRes
-import androidx.compose.foundation.*
-import androidx.compose.foundation.gestures.scrollable
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.*
+import androidx.compose.material.Card
+import androidx.compose.material.Icon
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.ColorFilter
-import androidx.compose.ui.graphics.DefaultAlpha
-import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.semantics.Role.Companion.Image
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.project.ifoah.viewmodels.auth.AuthViewModel
 import com.project.ifoah.R
 import com.project.ifoah.navigation.SCREENS
+import com.project.ifoah.viewmodels.auth.AuthViewModel
+import com.project.ifoah.viewmodels.skidata.SkiDataViewModel
 
 @Composable
-fun SkiSessionWidget(navController: NavController, authViewModel: AuthViewModel) {
+fun ProgressWidget(navController: NavController, authViewModel: AuthViewModel){
 
 
     Column(
         modifier = Modifier
             .fillMaxWidth()
             .padding(4.dp)
-          ,
+        ,
         horizontalAlignment = Alignment.CenterHorizontally,
 
-    ) {
+        ) {
         Card(
             elevation = 4.dp,
             shape = RoundedCornerShape(10.dp),
@@ -43,7 +43,7 @@ fun SkiSessionWidget(navController: NavController, authViewModel: AuthViewModel)
                 .fillMaxWidth()
                 .height(200.dp)
                 .clickable {
-                    navController.navigate(route = "${SCREENS.SkiStatistics}")
+                    navController.navigate(route = "${SCREENS.ProgressScreen}")
                 },
         ) {
             Box(
@@ -59,35 +59,35 @@ fun SkiSessionWidget(navController: NavController, authViewModel: AuthViewModel)
                 ) {
                     Row(
                         horizontalArrangement = Arrangement.Center
-                    ){
-                        Text("Check your ski sessions", style=MaterialTheme.typography.h6)
+                    ) {
+                        Text("Check your progress", style = MaterialTheme.typography.h6)
                     }
                     Spacer(Modifier.height(50.0.dp))
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.SpaceEvenly,
 
-                    ){
+                        ) {
                         Icon(
-                            imageVector = Icons.Default.DownhillSkiing,
+                            imageVector = Icons.Default.BarChart,
                             contentDescription = "account",
                             tint = MaterialTheme.colors.primary,
                             modifier = Modifier.size(40.dp)
                         )
                         Icon(
-                            imageVector = Icons.Default.TurnSlightRight,
+                            imageVector = Icons.Default.StackedLineChart,
                             contentDescription = "account",
                             tint = MaterialTheme.colors.primary,
                             modifier = Modifier.size(40.dp)
                         )
                         Icon(
-                            imageVector = Icons.Default.TurnSlightLeft,
+                            imageVector = Icons.Default.PieChart,
                             contentDescription = "account",
                             tint = MaterialTheme.colors.primary,
                             modifier = Modifier.size(40.dp)
                         )
                         Icon(
-                            imageVector = Icons.Default.Speed,
+                            imageVector = Icons.Default.Analytics,
                             contentDescription = "account",
                             tint = MaterialTheme.colors.primary,
                             modifier = Modifier.size(40.dp)
@@ -95,7 +95,7 @@ fun SkiSessionWidget(navController: NavController, authViewModel: AuthViewModel)
                     }
                 }
                 Image(
-                    painter = painterResource(R.drawable.carving_img_session),
+                    painter = painterResource(R.drawable.progress_screen),
                     contentDescription = null,
                     modifier = Modifier
                         .fillMaxSize(),
@@ -104,39 +104,7 @@ fun SkiSessionWidget(navController: NavController, authViewModel: AuthViewModel)
                 )
             }
         }
-
     }
 
-   /* val scrollState = rememberScrollState()
-    Row(
-        modifier = Modifier.horizontalScroll(scrollState)
-    ) {
-        singleSession()
-        singleSession()
-        singleSession()
-        singleSession()
-        singleSession()
-    }*/
-}
-
-
-@Composable
-fun singleSession() {
-
-    Column(
-        modifier = Modifier
-            .fillMaxWidth()
-
-    ) {
-        Card(
-            modifier = Modifier
-                .height(120.dp)
-                .width(120.dp)
-                .background(color = MaterialTheme.colors.primary)
-                .padding(20.dp)
-        ) {
-
-        }
 
     }
-}
