@@ -47,8 +47,8 @@ fun DrawerMenu(
                         Icon(imageVector = Icons.Default.Menu, contentDescription = "menu")
                     }
 
-                    Log.d("backqueuentires",navController.previousBackStackEntry.toString())
-                    if(navController.previousBackStackEntry != null){
+                    Log.d("backqueuentires", navController.previousBackStackEntry.toString())
+                    if (navController.previousBackStackEntry != null) {
                         IconButton(onClick = {
                             navController.popBackStack()
                         }) {
@@ -66,7 +66,7 @@ fun DrawerMenu(
 
             menuHeader(userName = userName)
             Divider(
-                modifier = Modifier.padding(top= 20.dp, bottom = 20.dp)
+                modifier = Modifier.padding(top = 20.dp, bottom = 20.dp)
             )
             menuItems(authViewModel = authViewModel, navController = navController)
         },
@@ -105,7 +105,7 @@ fun menuHeader(userName: String?) {
 @Composable
 fun menuItems(authViewModel: AuthViewModel, navController: NavController) {
 
-    Column(){
+    Column() {
         ListItem(
             text = { Text(text = "Home") },
             icon = {
@@ -115,13 +115,13 @@ fun menuItems(authViewModel: AuthViewModel, navController: NavController) {
                     modifier = Modifier.size(40.dp)
                 )
             },
-            modifier = Modifier.clickable{
-                if(navController.previousBackStackEntry != null) {
+            modifier = Modifier.clickable {
+                if (navController.previousBackStackEntry != null) {
                     navController.popBackStack()
                 }
 
                 navController.navigate(route = "${SCREENS.Home}")
-                if(navController.previousBackStackEntry != null) {
+                if (navController.previousBackStackEntry != null) {
                     navController.popBackStack()
                 }
 
@@ -136,14 +136,14 @@ fun menuItems(authViewModel: AuthViewModel, navController: NavController) {
                     modifier = Modifier.size(40.dp)
                 )
             },
-            modifier = Modifier.clickable{
+            modifier = Modifier.clickable {
                 navController.navigate(route = "${SCREENS.SkiStatistics}")
 
             }
 
         )
         ListItem(
-            text = { Text(text = "Ski Sessions") },
+            text = { Text(text = "Your Progress") },
             icon = {
                 Icon(
                     imageVector = Icons.Default.Analytics, contentDescription = "account",
@@ -151,7 +151,7 @@ fun menuItems(authViewModel: AuthViewModel, navController: NavController) {
                     modifier = Modifier.size(40.dp)
                 )
             },
-            modifier = Modifier.clickable{
+            modifier = Modifier.clickable {
                 navController.navigate(route = "${SCREENS.ProgressScreen}")
 
             }
@@ -174,8 +174,6 @@ fun menuItems(authViewModel: AuthViewModel, navController: NavController) {
             )
         )
     }
-
-
 
 
 }
