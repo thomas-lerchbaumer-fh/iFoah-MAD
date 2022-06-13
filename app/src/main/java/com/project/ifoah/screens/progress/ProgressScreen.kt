@@ -50,6 +50,7 @@ import me.bytebeats.views.charts.line.LineChartData
 import me.bytebeats.views.charts.line.render.line.SolidLineDrawer
 import me.bytebeats.views.charts.line.render.point.FilledCircularPointDrawer
 import me.bytebeats.views.charts.simpleChartAnimation
+import java.sql.ResultSet
 import java.text.DecimalFormat
 import java.text.SimpleDateFormat
 import java.time.LocalDateTime
@@ -255,7 +256,6 @@ fun LineChartView(skiDataViewModel: SkiDataViewModel) {
             }
 
         }
-
 
     }
 
