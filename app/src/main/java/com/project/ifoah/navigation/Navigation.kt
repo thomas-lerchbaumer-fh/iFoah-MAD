@@ -14,6 +14,7 @@ import com.project.ifoah.screens.auth.LoginScreen
 import com.project.ifoah.screens.auth.RegisterScreen
 import com.project.ifoah.screens.SessionStatistics
 import com.project.ifoah.screens.SplashScreen
+import com.project.ifoah.screens.getBetter.GetBetterScreen
 import com.project.ifoah.screens.progress.ProgressScreen
 import com.project.ifoah.viewmodels.auth.AuthViewModel
 import com.project.ifoah.viewmodels.skidata.SkiDataViewModel
@@ -75,6 +76,12 @@ fun Navigation() {
                     navController = navController,
                     authViewModel = authViewModel,
                     skiDataViewModel = skiDataViewModel
+                )
+            }
+            composable("${SCREENS.GetBetterScreen}") {
+                GetBetterScreen(
+                    navController = navController,
+                    authViewModel = authViewModel,
                 )
             }
 
