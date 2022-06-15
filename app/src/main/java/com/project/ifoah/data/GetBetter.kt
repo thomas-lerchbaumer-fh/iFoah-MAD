@@ -1,4 +1,4 @@
-package com.project.ifoah.viewmodels.getbetter
+package com.project.ifoah.data
 
 data class GetBetter(
     val id: String,
@@ -13,8 +13,8 @@ fun getGetBetter(): List<GetBetter> {
             id = "mov-001",
             title = "5 General Tips to improve your turn",
             description = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
-            source = "",
-            imgSource=""
+            source = "asdf",
+            imgSource="https://www.dance-charts.de/images/April_2019/AttaBoy---Sad-Party.jpg"
         ),
         GetBetter(
             id = "mov-002",
@@ -23,8 +23,8 @@ fun getGetBetter(): List<GetBetter> {
                     "\n" +
                     "In this lesson, Tom Gellie shares his expert knowledge with 3 actionable tips to help you ski steeper slopes, and short turns with better balance.\n" +
                     "These tips should help you ski with more confidence on steeps, prevent your skis washing out at the end of your short turns and keep you focused on small fore-aft movement shifts that make a big difference.",
-            source = "",
-            imgSource = ""
+            source = "www",
+            imgSource = "https://www.dance-charts.de/images/April_2019/AttaBoy---Sad-Party.jpg"
 
         )
     )

@@ -16,6 +16,8 @@ import com.project.ifoah.screens.SessionStatistics
 import com.project.ifoah.screens.SplashScreen
 import com.project.ifoah.screens.getBetter.GetBetterScreen
 import com.project.ifoah.screens.progress.ProgressScreen
+import com.project.ifoah.screens.videoplayer.VideoPlayer
+import com.project.ifoah.screens.videoplayer.VideoplayerScreen
 import com.project.ifoah.viewmodels.auth.AuthViewModel
 import com.project.ifoah.viewmodels.skidata.SkiDataViewModel
 import com.project.ifoah.viewmodels.skidata.SkiSession
@@ -82,6 +84,18 @@ fun Navigation() {
                 GetBetterScreen(
                     navController = navController,
                     authViewModel = authViewModel,
+                )
+            }
+            composable(
+                SCREENS.VideoplayerScreen.name + "/{videoId}",
+                arguments = listOf(navArgument("videoId") {
+                    type = NavType.StringType
+                })
+            ) { backStackEntry -> // on argument to get the movieId for selected movie
+                VideoplayerScreen(
+                    navController = navController,
+                    authViewModel = authViewModel,
+                    videoId = backStackEntry.arguments?.getString("videoId"), //? = is allowed to be null
                 )
             }
 

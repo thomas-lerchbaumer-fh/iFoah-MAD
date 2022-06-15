@@ -27,8 +27,6 @@ import coil.ImageLoader
 import coil.annotation.ExperimentalCoilApi
 import coil.compose.AsyncImage
 import coil.compose.rememberImagePainter
-import coil.decode.GifDecoder
-import coil.decode.ImageDecoderDecoder
 import coil.size.OriginalSize
 import com.project.ifoah.R
 import com.project.ifoah.navigation.SCREENS
