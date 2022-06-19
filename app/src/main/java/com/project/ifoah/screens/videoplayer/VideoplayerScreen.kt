@@ -67,10 +67,10 @@ fun VideoPlayer(videoId : String?){
 
             if (videoId == getGetBetter()[0].id) {
                 myVideoUrl =
-                    "https://cdn.videvo.net/videvo_files/video/free/2020-05/large_watermarked/3d_ocean_1590675653_preview.mp4"
+                    "https://safe.hbox.at/index.php/s/YzJ3CR79R6bW4JN/download?path=/&files=HowtoSki.mp4"
             } else {
                 myVideoUrl =
-                    "https://cdn.videvo.net/videvo_files/video/free/2020-05/large_watermarked/3d_ocean_1590675653_preview.mp4"
+                    "https://safe.hbox.at/index.php/s/YzJ3CR79R6bW4JN/download?path=/&files=howtobalance.mp4"
             }
 
             val mExoPlayer = remember(mContext) {
