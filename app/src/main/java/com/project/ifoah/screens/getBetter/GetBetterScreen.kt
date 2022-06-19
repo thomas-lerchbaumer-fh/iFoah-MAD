@@ -84,7 +84,8 @@ fun Categories(videoItem: GetBetter, showDetails: Boolean, onItemClick: (String)
                 modifier = Modifier
                     .size(120.dp)
                     .padding(12.dp),
-                elevation = 6.dp
+                elevation = 6.dp,
+                shape = RoundedCornerShape(corner = CornerSize(60.dp)),
             ){
                 Image(
                     painter = rememberImagePainter( // Coil Part to load images
