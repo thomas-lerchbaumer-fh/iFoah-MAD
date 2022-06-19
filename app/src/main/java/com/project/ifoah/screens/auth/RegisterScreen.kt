@@ -101,9 +101,8 @@ fun RegisterScreen(navController: NavController, viewModel: AuthViewModel) {
                 Text(text = "Submit")
             }
 
-
             Text(text = "Are you already an User? Go To Login ->",
-                color = Color.Blue,
+                color = Color.White,
                 modifier = Modifier
                     .padding(8.dp)
                     .clickable {

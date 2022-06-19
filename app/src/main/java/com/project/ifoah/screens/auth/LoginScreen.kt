@@ -102,7 +102,7 @@ fun LoginScreen(navController: NavController, authViewModel: AuthViewModel) {
                 Text(text = "Login")
             }
             Text(text = "New Here? Go To Sign Up ->",
-                color = Color.Blue,
+                color = Color.White,
                 modifier = Modifier
                     .padding(8.dp)
                     .clickable {
