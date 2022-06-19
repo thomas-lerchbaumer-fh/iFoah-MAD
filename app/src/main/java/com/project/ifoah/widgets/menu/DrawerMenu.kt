@@ -158,6 +158,21 @@ fun menuItems(authViewModel: AuthViewModel, navController: NavController) {
 
         )
         ListItem(
+            text = { Text(text = "Ski like Hansi") },
+            icon = {
+                Icon(
+                    imageVector = Icons.Default.SportsGymnastics, contentDescription = "account",
+                    tint = MaterialTheme.colors.primary,
+                    modifier = Modifier.size(40.dp)
+                )
+            },
+            modifier = Modifier.clickable {
+                navController.navigate(route = "${SCREENS.GetBetterScreen}")
+
+            }
+
+        )
+        ListItem(
             text = { Text(text = "Logout") },
             icon = {
                 Icon(
